@@ -3,9 +3,6 @@ title: "카프카 프로듀서"
 date: '2023-07-02'
 categories: [ Kafka, 카프카 핵심가이드 ]
 tags: [ Kafka, Kafka Producer ]
-image:
-  path: https://github.com/won0935/won0935.github.io/assets/55419159/ec9c7457-2499-4422-a054-d82e31a25b0e
-  alt: 카프카핵심가이드
 ---
 
 # 3장. 카프카 프로듀서: 카프카에 메시지 쓰기

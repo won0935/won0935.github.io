@@ -3,9 +3,6 @@ title: "카프카 컨슈머"
 date: '2023-10-05'
 categories: [ Kafka, 카프카 핵심가이드 ]
 tags: [ Kafka, Kafka Consumer ]
-image:
-  path: https://github.com/won0935/won0935.github.io/assets/55419159/ec9c7457-2499-4422-a054-d82e31a25b0e
-  alt: 카프카핵심가이드
 ---
 
 # 4장 카프카 컨슈머: 카프카에서 데이터 읽기

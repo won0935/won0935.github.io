@@ -3,9 +3,6 @@ title: "[3장] 설계원칙 - LoD"
 date: '2024-01-16'
 categories: [ 설계, 디자인 패턴의 아름다움 ]
 tags: [ 다자인패턴, LoD ]
-image:
-  path: https://github.com/won0935/won0935.github.io/assets/55419159/5b3c1887-0957-4817-965c-d4fa6e7330c6
-  alt: 디자인 패턴의 아름다움
 ---
 
 # LoD (Law of Demeter)
