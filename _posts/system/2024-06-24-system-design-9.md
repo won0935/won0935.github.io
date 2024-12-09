@@ -26,7 +26,6 @@ tags: [ 면접 ]
 - RESTful API 를 통한 접근
 - 느림
 
-![IMG_3468.heic](S3%E1%84%8B%E1%85%AA%20%E1%84%8B%E1%85%B2%E1%84%89%E1%85%A1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%80%E1%85%A2%E1%86%A8%E1%84%8E%E1%85%A6%20%E1%84%8C%E1%85%A5%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%89%E1%85%A9%20df1a921b522c49cdb27943ab11ae6f78/IMG_3468.heic)
 
 ## 용어 정리
 
@@ -96,7 +95,6 @@ $$
 
 ## 개략적 설계안
 
-![IMG_3469.heic](S3%E1%84%8B%E1%85%AA%20%E1%84%8B%E1%85%B2%E1%84%89%E1%85%A1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%80%E1%85%A2%E1%86%A8%E1%84%8E%E1%85%A6%20%E1%84%8C%E1%85%A5%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%89%E1%85%A9%20df1a921b522c49cdb27943ab11ae6f78/IMG_3469.heic)
 
 - **로드밸런서**
 - **API 서비스** : 인증, 권한 부여, 접근 제어 서비스
@@ -105,7 +103,6 @@ $$
 
 ## 업로드
 
-![IMG_3470.heic](S3%E1%84%8B%E1%85%AA%20%E1%84%8B%E1%85%B2%E1%84%89%E1%85%A1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%80%E1%85%A2%E1%86%A8%E1%84%8E%E1%85%A6%20%E1%84%8C%E1%85%A5%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%89%E1%85%A9%20df1a921b522c49cdb27943ab11ae6f78/IMG_3470.heic)
 
 1. 클라이언트는 PUT 버킷생성 요청, API 서비스로 전달
 2. API 서비스는 IAM 에 사용자가 권한을 가졌는지 확인
@@ -116,8 +113,6 @@ $$
 7. API 서비스는 메타데이터 저장소에 저장(object_name, object_id, bucket_id)
 
 ## 다운로드
-
-![IMG_3471.heic](S3%E1%84%8B%E1%85%AA%20%E1%84%8B%E1%85%B2%E1%84%89%E1%85%A1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%80%E1%85%A2%E1%86%A8%E1%84%8E%E1%85%A6%20%E1%84%8C%E1%85%A5%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%89%E1%85%A9%20df1a921b522c49cdb27943ab11ae6f78/IMG_3471.heic)
 
 1. 클라이언트는 GET 요청을 로드밸런서로 보냄, 로드밸런서는 API 서비스로 보냄
 2. API 서비스는 IAM에 사용자가 권한을 가졌는지 확인
@@ -154,13 +149,11 @@ $$
     - 객체에 대한 new write, overwrite, delete 이후에 따라오는 읽기(GET, PUT, LIST)에 대해 강일관성을 보장함
     
     - Consistency가 없다면 어떤 불편함이 있을까……?
-        
-        ![Untitled](S3%E1%84%8B%E1%85%AA%20%E1%84%8B%E1%85%B2%E1%84%89%E1%85%A1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%80%E1%85%A2%E1%86%A8%E1%84%8E%E1%85%A6%20%E1%84%8C%E1%85%A5%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%89%E1%85%A9%20df1a921b522c49cdb27943ab11ae6f78/Untitled.png)
-        
+
     
     ### Diving Deep on S3 Consistency
     
-    - https://www.allthingsdistributed.com/2021/04/s3-strong-consistency.html (알고보니 아마존 최고기술책임자 블ㄹ그)
+    - https://www.allthingsdistributed.com/2021/04/s3-strong-consistency.html (알고보니 아마존 최고기술책임자 블로그)
     - S3
         - 처음에는 단순 storage 용도면 충분했음
         - 시간이 지나자 data lake, analytics의 용도로도 사용하기 시작함
@@ -190,9 +183,7 @@ $$
             
             ⇒ cache bypass를 생각해봤지만 performance cost is too high 
             
-    
-    ![Untitled](S3%E1%84%8B%E1%85%AA%20%E1%84%8B%E1%85%B2%E1%84%89%E1%85%A1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%80%E1%85%A2%E1%86%A8%E1%84%8E%E1%85%A6%20%E1%84%8C%E1%85%A5%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%89%E1%85%A9%20df1a921b522c49cdb27943ab11ae6f78/Untitled%201.png)
-    
+
     - S3 metadata subsystem을 strong consistent하게 만들자!!
         - persistence tier에 새로운 복제 로직을 도입
             - at-least-once event notification delivery system
@@ -214,8 +205,7 @@ $$
     https://dprg.cs.uiuc.edu/data/files/2016/ambry.pdf
     
     ## Overview
-    
-    ![Untitled](S3%E1%84%8B%E1%85%AA%20%E1%84%8B%E1%85%B2%E1%84%89%E1%85%A1%E1%84%92%E1%85%A1%E1%86%AB%20%E1%84%80%E1%85%A2%E1%86%A8%E1%84%8E%E1%85%A6%20%E1%84%8C%E1%85%A5%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%89%E1%85%A9%20df1a921b522c49cdb27943ab11ae6f78/Untitled%202.png)
+
     
     - Partition
         - 데이터 덩어리

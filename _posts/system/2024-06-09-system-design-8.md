@@ -62,7 +62,7 @@ tags: [ 면접 ]
 
 ### **아키텍처**
 
-![image](https://github.com/won0935/won0935.github.io/assets/55419159/1ef0be26-9b06-4901-95d7-07d226667edb)
+
 
 1. 메일을 보낼 시 아웃룩 메일 서버로 전송됨
 2. 아웃룩 메일 서버는 수신자의 DNS 질의를 통해 수신자의 SMTP 서버 주소를 찾고 메일을 보냄
@@ -96,7 +96,7 @@ tags: [ 면접 ]
 
 ### **아키텍처**
 
-![image](https://github.com/won0935/won0935.github.io/assets/55419159/0d8e514e-c773-43d1-b0b4-b15f35fd8936)
+
 
 - **웹 메일** : 브라우저를 통해 메일 송수신
 - **웹 서버** : 사용자가 이용하는 요청/응답 서비스, 로그인, 프로필 관리 등
@@ -117,7 +117,7 @@ tags: [ 면접 ]
 
 ## 이메일 전송 절차
 
-![image](https://github.com/won0935/won0935.github.io/assets/55419159/c02f6620-b6e7-47b4-9325-866aa6013ae3)
+
 
 1. **웹 메일** : 메일 작성 후 전송
 2. **로드밸런서** : 웹 서버로 전송, Rate limit 적용
@@ -142,7 +142,7 @@ tags: [ 면접 ]
 
 ## 이메일 수신 절차
 
-![image](https://github.com/won0935/won0935.github.io/assets/55419159/dacf5a3e-0850-47d3-8132-8679747415e7)
+
 
 1. **로드밸런서** : 트래픽을 SMTP 서버로 분산 전송
 2. **SMTP 서버** : 불필요한 이메일을 필터링
@@ -207,13 +207,13 @@ tags: [ 면접 ]
 
 ### 엘라스틱 서치
 
-![image](https://github.com/won0935/won0935.github.io/assets/55419159/9b4fd2e1-dac4-42eb-8c72-7330421badbc)
+
 
 - 주 이메일 저장소와 엘라스틱과의 동기화가 관건
 
 ### DB 검색
 
-![image](https://github.com/won0935/won0935.github.io/assets/55419159/57982ab7-06a2-4608-9a48-4fa994f1ad15)
+
 
 - LSM 트리를 사용하여 색인을 구조화하는 것이 바람직함
   - LSM 트리란
@@ -222,7 +222,7 @@ tags: [ 면접 ]
 
 ### 요약
 
-![image](https://github.com/won0935/won0935.github.io/assets/55419159/7791616a-c752-4f77-b023-bae0b00a240d)
+
 
 - 소규모의 경우 엘라스틱 서치가 좋은 선택지임
 - DB에 내장된 검색 솔루션을 이용하는 것도 좋음
